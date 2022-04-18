@@ -9,12 +9,14 @@
   color: black;
   font-size: 50px;
   text-shadow: rgba(105, 254, 71, 0.638) 2px 2px 5px;
+  padding-bottom: 0.5rem;
 }
 
 .hangman__table-youLost {
   color: black;
   font-size: 50px;
   text-shadow: rgba(254, 71, 71, 0.638) 2px 2px 5px;
+  padding-bottom: 0.5rem;
 }
 
 @media screen and (max-width:900px) {
@@ -25,7 +27,17 @@
   }
 }
 
-@media screen and (max-width:350px) {
+@media screen and (max-width:550px) {
+  .hangman__table-youWon {
+    font-size: 30px;
+  }
+
+  .hangman__table-youLost {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width:400px) {
   .hangman__table-youWon {
     font-size: 30px;
 

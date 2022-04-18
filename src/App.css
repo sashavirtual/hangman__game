@@ -41,7 +41,7 @@ body {
   background-color: #fed039;
 }
 
-@media screen and (max-width:376px) {
+@media screen and (max-width:400px) {
   .playAgain {
     font-size: 18px;
     border-radius: 3px;
