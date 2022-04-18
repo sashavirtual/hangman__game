@@ -1,0 +1,15 @@
+.hangman__table-word {
+    display: flex;
+    flex: 2;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    font-size: 4rem;
+    flex-direction: column;
+}
+
+@media screen and (max-width:340px) {
+    .hangman__table-word {
+        font-size: 2.8rem;
+    }
+}

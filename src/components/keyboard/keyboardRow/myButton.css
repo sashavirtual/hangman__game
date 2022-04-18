@@ -1,0 +1,57 @@
+.myButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+
+    width: 10vw;
+    font-size: 5vmin;
+    max-width: 130px;
+    max-height: 130px;
+    border: 0.7vmin solid #ffff69;
+    background-color: #F6F54D;
+    border-radius: 2vmin;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin: 0 1px;
+}
+
+@media screen and (max-width:1000px) {
+    .myButton {
+        height: 7vh;
+        width: 8vw;
+    }
+}
+
+.myButton:hover {
+    background-color: #FEB139;
+}
+
+.myButton:disabled:hover {
+    background-color: #F6F54D;
+    cursor: default;
+}
+
+.right {
+    background-color: rgb(137, 255, 101);
+}
+
+.right:disabled:hover {
+    background-color: rgb(137, 255, 101);
+    cursor: default;
+}
+
+.wrong {
+    background-color: #F55353;
+}
+
+.wrong:disabled:hover {
+    background-color: #F55353;
+    cursor: default;
+}
+
+.wrong:disabled,
+.right:disabled {
+    opacity: 1;
+    color: black;
+}

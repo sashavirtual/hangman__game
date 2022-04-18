@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;1,800&family=Oswald:wght@300;400&display=swap');
+
+* {
+  font-family: 'Oswald', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: 200;
+}
+
+body {
+  background-color: #143F6B;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 1rem auto;
+  width: 93%;
+  max-width: 1200px;
+  height: 83%;
+  max-height: 1000px;
+  background-color: white;
+  box-shadow: 5px 5px 10px 5px rgba(170, 170, 170, 0.384);
+}
+
+.playAgain {
+  padding: 8px;
+  font-size: 25px;
+  background-color: #FEB139;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 113, 60, 0.344);
+}
+
+.playAgain:hover {
+  background-color: #fed039;
+}
+
+@media screen and (max-width:376px) {
+  .playAgain {
+    font-size: 18px;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+  }
+}

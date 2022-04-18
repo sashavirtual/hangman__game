@@ -1,0 +1,17 @@
+.hangman__table-hungman {
+    position: relative;
+    display: flex;
+    flex: 1;
+    padding: 1rem;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.hangman__table-hungman_image {
+    transition: all 0.2s;
+    width: 20vmax;
+    height: 20vmax;
+    object-fit: contain;
+}

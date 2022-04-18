@@ -1,0 +1,18 @@
+.hangman__keyboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    max-width: 80%;
+    position: fixed;
+    bottom: 4%;
+    border: 0 1rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .hangman__keyboard {
+        max-width: 98%;
+
+    }
+}
