@@ -18,10 +18,11 @@
 
 @media screen and (max-width:1000px) {
     .myButton {
-        height: 7vh;
-        width: 8vw;
+        height: 8vh;
+        width: 10vw;
     }
 }
+
 
 .myButton:hover {
     background-color: #FEB139;
