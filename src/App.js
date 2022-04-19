@@ -2,26 +2,47 @@ import { useState } from 'react';
 import './App.css';
 import Keyboard from './components/keyboard/Keyboard.jsx'
 import Table from './components/table/Table.jsx'
-import { corpus } from './corpus'
+import { corpus, corpusLg, corpusRus, corpusRusLg } from './corpus'
 function App() {
   const [IL, setIL] = useState([])
   const [hangPic, setHangPic] = useState(0)
-  const [word, setWord] = useState((corpus[Math.floor(Math.random() * 533)]).toUpperCase())
-  const playAgain = () => {
+  const [toggleLanguage, setToggleLanguage] = useState("Russian")
+  const [chosen, setChosen] = useState('Random')
+  const [word, setWord] = useState((corpusRus[chosen][Math.floor(Math.random() * corpusRusLg[chosen])]).toUpperCase())
+  const playAgain = (cath, language, lang) => {
+    console.log(language, toggleLanguage)
     setHangPic(0)
     setIL([])
-    let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    let alphabet = toggleLanguage === 'English' ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' : "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
     alphabet.split('').map(id => {
-      document.getElementById('btn' + id).classList.remove('wrong', 'right')
-      document.getElementById('btn' + id).disabled = false
+      document.getElementById('btn' + id.charCodeAt(0)).classList.remove('wrong', 'right')
+      document.getElementById('btn' + id.charCodeAt(0)).disabled = false
     })
-    setWord((corpus[Math.floor(Math.random() * 533)]).toUpperCase())
+    if (language) {
+      if (language === 'English') {
+        setWord((corpus[cath][Math.floor(Math.random() * corpusLg[cath])]).toUpperCase())
+      } else {
+        setWord((corpusRus[cath][Math.floor(Math.random() * corpusRusLg[cath])]).toUpperCase())
+      }
+    } else if (toggleLanguage) {
+      if (toggleLanguage === 'English') {
+        setWord((corpus[cath][Math.floor(Math.random() * corpusLg[cath])]).toUpperCase())
+      }
+      else {
+        setWord((corpusRus[cath][Math.floor(Math.random() * corpusRusLg[cath])]).toUpperCase())
+      }
+    } else {
+      cath ?
+        setWord((corpus[cath][Math.floor(Math.random() * corpusLg[cath])]).toUpperCase())
+        :
+        setWord((corpus[chosen][Math.floor(Math.random() * corpusLg[chosen])]).toUpperCase())
+    }
   }
   return (
     <div className="App">
-      <Table IL={IL} word={word} setWord={setWord} setIL={setIL} hangPic={hangPic} setHangPic={setHangPic} />
-      <Keyboard IL={IL} word={word} setWord={setWord} setIL={setIL} hangPic={hangPic} setHangPic={setHangPic} />
-      <button className="playAgain" onClick={playAgain}>NEW GAME</button>
+      <Table toggleLanguage={toggleLanguage} setToggleLanguage={setToggleLanguage} IL={IL} playAgain={playAgain} chosen={chosen} setChosen={setChosen} word={word} setWord={setWord} setIL={setIL} hangPic={hangPic} setHangPic={setHangPic} />
+      <Keyboard toggleLanguage={toggleLanguage} IL={IL} word={word} setWord={setWord} setIL={setIL} hangPic={hangPic} setHangPic={setHangPic} />
+      <button className="playAgain" onClick={() => playAgain(chosen, toggleLanguage)}>NEW GAME</button>
     </div>
   );
 }
