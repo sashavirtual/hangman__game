@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/hangman__game/static/css/main.327a0951.css",
-    "main.js": "/hangman__game/static/js/main.ed2ea080.js",
+    "main.css": "/hangman__game/static/css/main.cd320f3d.css",
+    "main.js": "/hangman__game/static/js/main.1ac826a7.js",
     "static/media/hangman6.png": "/hangman__game/static/media/hangman6.ab4a8390ae27d25d8ae1.png",
     "static/media/hangman5.png": "/hangman__game/static/media/hangman5.ba7fa3c7f818f9c2b153.png",
     "static/media/hangman4.png": "/hangman__game/static/media/hangman4.40bc278ab50cbc5c1b8b.png",
@@ -10,11 +10,11 @@
     "static/media/hangman1.png": "/hangman__game/static/media/hangman1.1730d3db3cf89100547d.png",
     "static/media/hangman0.png": "/hangman__game/static/media/hangman0.3896601862f2af0f64fd.png",
     "index.html": "/hangman__game/index.html",
-    "main.327a0951.css.map": "/hangman__game/static/css/main.327a0951.css.map",
-    "main.ed2ea080.js.map": "/hangman__game/static/js/main.ed2ea080.js.map"
+    "main.cd320f3d.css.map": "/hangman__game/static/css/main.cd320f3d.css.map",
+    "main.1ac826a7.js.map": "/hangman__game/static/js/main.1ac826a7.js.map"
   },
   "entrypoints": [
-    "static/css/main.327a0951.css",
-    "static/js/main.ed2ea080.js"
+    "static/css/main.cd320f3d.css",
+    "static/js/main.1ac826a7.js"
   ]
 }
