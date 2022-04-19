@@ -48,7 +48,7 @@
   position: absolute;
   font-size: 1.2rem;
   left: 21%;
-  top: 2rem;
+  top: 3rem;
   margin-top: 0.5rem;
   width: 12rem;
   padding: 0.5rem;
@@ -186,7 +186,7 @@
 /* DROPDOWN */
 @media screen and (max-width:1900px) {
   .hangman__table-dropdown {
-    left: 25%;
+    left: 20%;
     top: 3rem;
   }
 }
