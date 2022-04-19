@@ -10,8 +10,7 @@ function App() {
   const [chosen, setChosen] = useState('Random')
   const [word, setWord] = useState((corpusRus[chosen][Math.floor(Math.random() * corpusRusLg[chosen])]).toUpperCase())
   console.log(document.querySelector(".playAgain"))
-  // window.onclick = function(event) {
-  //   if (!event.target.matches('.dropbtn')) {}
+
   const playAgain = (cath, language, lang) => {
     setHangPic(0)
     setIL([])

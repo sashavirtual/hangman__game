@@ -22,30 +22,35 @@ function Table({ IL, setIL, setHangPic, hangPic, word, setWord, chosen, setChose
         playAgain(chosen, lang)
     }
     let menuRef = useRef()
+    let closeline = useRef()
     useEffect(() => {
-        document.addEventListener("mousedown", (event) => {
-            if (!menuRef.current.contains(event.target)) {
+        let handler = (event) => {
+            if (!menuRef.current?.contains(event.target) && !closeline.current?.contains(event.target)) {
                 setToggleMenu(false)
             }
-        })
-    })
+        }
+        document.addEventListener("mousedown", handler)
+        return () => document.removeEventListener("mousedown", handler)
+    }
+    )
+    console.log(toggleLanguage)
     return (<>
         {toggleMenu
-            ? <a className="hangman__table-menu" onClick={() => setToggleMenu(false)}><img className="closeLine" src='https://cdn-icons-png.flaticon.com/512/1828/1828778.png' /></a>
+            ? <a ref={closeline} className="hangman__table-menu" onClick={() => setToggleMenu(false)}><img className="closeLine" src='https://cdn-icons-png.flaticon.com/512/1828/1828778.png' /></a>
             : <a className="hangman__table-menu" onClick={() => setToggleMenu(true)}><img src='https://cdn-icons-png.flaticon.com/512/1828/1828859.png' /></a>
         }
         {toggleMenu && (
             <div ref={menuRef} className="hangman__table-dropdown scale-up-tl">
                 <div className='hangman__table-language'>
-                    <p className={toggleLanguage === "English" && ' hangman__table-menu-chosen'} onClick={() => newLang("English")}>English</p>
-                    <p className={toggleLanguage === "Русский" && ' hangman__table-menu-chosen'} onClick={() => newLang("Русский")}>Русский</p>
+                    <p className={`${toggleLanguage === "English" && ' hangman__table-menu-chosen'}`} onClick={() => newLang("English")}>English</p>
+                    <p className={`${toggleLanguage !== "English" && ' hangman__table-menu-chosen'}`} onClick={() => newLang("Русский")}>Русский</p>
                 </div>
                 <hr />
-                <div className={`hangman__table-cathegory ${toggleCathegory && ' hangman__table-menu-chosen'}`} onClick={() => setToggleCathegory(!toggleCathegory)}>{toggleLanguage === 'Русский' ? "Тема" : "Cathegory"}</div>
+                <div className={`hangman__table-cathegory ${toggleCathegory && ' hangman__table-menu-chosen'}`} onClick={() => setToggleCathegory(!toggleCathegory)}>{toggleLanguage !== 'English' ? "Тема" : "Cathegory"}</div>
                 {toggleCathegory && (
                     <ul className="hangman__table-cathegory__list scale-up-ver-top">
                         {cathegoryArr.map((item, index) => (
-                            <li key={"table-list" + (index + 1)} className={`${chosen === item && 'hangman__table-menu-chosen'}`} onClick={() => newCath(item)}>{toggleLanguage === "Русский" ? cathRus[item] : item}</li>
+                            <li key={"table-list" + (index + 1)} className={`${chosen === item && 'hangman__table-menu-chosen'}`} onClick={() => newCath(item)}>{toggleLanguage !== "English" ? cathRus[item] : item}</li>
                         ))}
                     </ul>
                 )}
