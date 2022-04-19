@@ -9,8 +9,10 @@ function App() {
   const [toggleLanguage, setToggleLanguage] = useState("Russian")
   const [chosen, setChosen] = useState('Random')
   const [word, setWord] = useState((corpusRus[chosen][Math.floor(Math.random() * corpusRusLg[chosen])]).toUpperCase())
+  console.log(document.querySelector(".playAgain"))
+  // window.onclick = function(event) {
+  //   if (!event.target.matches('.dropbtn')) {}
   const playAgain = (cath, language, lang) => {
-    console.log(language, toggleLanguage)
     setHangPic(0)
     setIL([])
     let alphabet = toggleLanguage === 'English' ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' : "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
@@ -42,7 +44,7 @@ function App() {
     <div className="App">
       <Table toggleLanguage={toggleLanguage} setToggleLanguage={setToggleLanguage} IL={IL} playAgain={playAgain} chosen={chosen} setChosen={setChosen} word={word} setWord={setWord} setIL={setIL} hangPic={hangPic} setHangPic={setHangPic} />
       <Keyboard toggleLanguage={toggleLanguage} IL={IL} word={word} setWord={setWord} setIL={setIL} hangPic={hangPic} setHangPic={setHangPic} />
-      <button className="playAgain" onClick={() => playAgain(chosen, toggleLanguage)}>NEW GAME</button>
+      <button className="playAgain" onClick={() => playAgain(chosen, toggleLanguage)}>{toggleLanguage === "English" ? "NEW GAME" : 'НОВАЯ ИГРА'}</button>
     </div>
   );
 }

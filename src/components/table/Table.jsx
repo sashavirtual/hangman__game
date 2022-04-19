@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Word from '../word/Word'
 import Hungman from '../hungman/Hungman'
 import './table.css'
@@ -21,13 +21,21 @@ function Table({ IL, setIL, setHangPic, hangPic, word, setWord, chosen, setChose
         setToggleLanguage(lang)
         playAgain(chosen, lang)
     }
+    let menuRef = useRef()
+    useEffect(() => {
+        document.addEventListener("mousedown", (event) => {
+            if (!menuRef.current.contains(event.target)) {
+                setToggleMenu(false)
+            }
+        })
+    })
     return (<>
         {toggleMenu
             ? <a className="hangman__table-menu" onClick={() => setToggleMenu(false)}><img className="closeLine" src='https://cdn-icons-png.flaticon.com/512/1828/1828778.png' /></a>
             : <a className="hangman__table-menu" onClick={() => setToggleMenu(true)}><img src='https://cdn-icons-png.flaticon.com/512/1828/1828859.png' /></a>
         }
         {toggleMenu && (
-            <div className="hangman__table-dropdown scale-up-tl">
+            <div ref={menuRef} className="hangman__table-dropdown scale-up-tl">
                 <div className='hangman__table-language'>
                     <p className={toggleLanguage === "English" && ' hangman__table-menu-chosen'} onClick={() => newLang("English")}>English</p>
                     <p className={toggleLanguage === "Русский" && ' hangman__table-menu-chosen'} onClick={() => newLang("Русский")}>Русский</p>

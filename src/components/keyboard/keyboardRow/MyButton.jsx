@@ -5,8 +5,6 @@ function MyButton({ letter, toggleLanguage, IL, keyID, setIL, setHangPic, hangPi
         let lt = [...arguments][0]['letter']
         let btnClass = word.includes(lt) ? 'right' : 'wrong'
         let tempID = 'btn' + lt.charCodeAt(0)
-        console.log(keyID)
-        console.log(lt.charCodeAt(0))
         document.getElementById(tempID).classList.add(btnClass)
         document.getElementById(tempID).disabled = true
         let tempCount = hangPic
