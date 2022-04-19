@@ -46,9 +46,11 @@
   align-items: left;
   justify-content: flex-start;
   position: absolute;
-  left: 25%;
-  top: 3rem;
-  width: 9rem;
+  font-size: 1.2rem;
+  left: 21%;
+  top: 2rem;
+  margin-top: 0.5rem;
+  width: 12rem;
   padding: 0.5rem;
   border: 1px solid rgba(194, 194, 194, 0.389);
   box-shadow: 2px 2px 2px 1px rgba(154, 154, 154, 0.343);
@@ -135,6 +137,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .hangman__table-dropdown {
+    font-size: 0.9rem;
   }
 
   .hangman__table-menu img {
@@ -225,6 +231,11 @@
     left: 7%;
     top: 3rem;
   }
+
+  .hangman__table-menu img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }
 
 @media screen and (max-width:1310px) {
@@ -238,6 +249,7 @@
   .hangman__table-dropdown {
     left: 5%;
     top: 3rem;
+    font-size: 1rem;
   }
 }
 
