@@ -47,11 +47,11 @@
   justify-content: flex-start;
   position: absolute;
   font-size: 1.2rem;
-  left: 21%;
+  left: 18%;
   top: 3rem;
   margin-top: 0.5rem;
-  width: 12rem;
-  padding: 0.5rem;
+  width: 22rem;
+  padding: 1rem;
   border: 1px solid rgba(194, 194, 194, 0.389);
   box-shadow: 2px 2px 2px 1px rgba(154, 154, 154, 0.343);
   transition: 2s;
@@ -67,6 +67,7 @@
 
 .hangman__table-language p {
   padding-right: 0.5rem;
+  font-size: 2.2rem;
   transition: 0.2s;
   padding: 5px 0.5rem 5px 0;
 }
@@ -88,6 +89,7 @@
 .hangman__table-cathegory {
   cursor: pointer;
   z-index: 2;
+  font-size: 2.2rem;
 }
 
 
@@ -107,6 +109,7 @@
 
 
 .hangman__table-cathegory__list li {
+  font-size: 1.8rem;
   margin-left: 0.2rem;
   list-style: none;
   cursor: pointer;
@@ -139,6 +142,10 @@
     align-items: center;
   }
 
+  .hangman__table-cathegory__list li {
+    font-size: 1.6rem;
+  }
+
   .hangman__table-dropdown {
     font-size: 0.9rem;
   }
@@ -164,13 +171,35 @@
     font-size: 30px;
   }
 
+  .hangman__table-language p {
+    font-size: 1.9rem;
+  }
 
+  .hangman__table-cathegory__list li {
+    font-size: 1.5rem;
+  }
+
+  .hangman__table-cathegory {
+    font-size: 1.9rem;
+  }
 }
 
 @media screen and (max-width:400px) {
   .hangman__table-youWon {
     font-size: 30px;
 
+  }
+
+  .hangman__table-cathegory__list li {
+    font-size: 1.3rem;
+  }
+
+  .hangman__table-language p {
+    font-size: 1.5rem;
+  }
+
+  .hangman__table-cathegory {
+    font-size: 1.5rem;
   }
 
   .hangman__table-youLost {
@@ -189,6 +218,7 @@
     left: 20%;
     top: 3rem;
   }
+
 }
 
 @media screen and (max-width:1800px) {
